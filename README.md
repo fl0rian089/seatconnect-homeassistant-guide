@@ -4,7 +4,7 @@ This guide will help you set up a workaround working for the discontinued seatco
 
 <h2>What are the prerequisites?</h2>
 
-1. a running iobroker instance. if you don't use iobroker yet, i would recommend you to start with a docker. [docker info](https://github.com/fl0rian089/seatconnect-homeassistant-guide/blob/559574e83d42ea139ee2996001be88bb751de456/iobroker/dockerinfo.md) and [docker-compose.yaml](https://github.com/fl0rian089/seatconnect-homeassistant-guide/blob/19b6942bb7ca6d367960255cc2ebefc1f0d6963a/iobroker/docker-compose.yaml) here.
+1. a running iobroker instance. if you don't use iobroker yet, i would recommend you to start with a docker. [docker info](https://github.com/fl0rian089/seatconnect-homeassistant-guide/blob/9b08b13b76fb47f7863b8456a214fd59937a45ee/iobroker/dockerinfo.md) and [docker-compose.yaml](https://github.com/fl0rian089/seatconnect-homeassistant-guide/blob/9b08b13b76fb47f7863b8456a214fd59937a45ee/iobroker/docker-compose.yaml) here.
 2. running homeassistant instance.
 3. running Mosquitto broker on homeassistant.
 4. If you want to use the googlemaps api, you need to create a google geocoding api key.

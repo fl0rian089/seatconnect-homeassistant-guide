@@ -1,0 +1,23 @@
+services:
+  iobroker-<anyname>:
+    image: iobroker/iobroker:latest
+    container_name: iobroker-<anyname>
+    hostname: iobroker-<anyname>
+    environment:
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - DEBIAN_FRONTEND=teletype
+      - BUILD=20250225.234318
+      - LANG=de_DE.UTF-8
+      - LANGUAGE=de_DE:de
+      - LC_ALL=de_DE.UTF-8
+      - SETGID=1000
+      - SETUID=1000
+      - TZ=Europe/Berlin
+    volumes:
+      - /root/docker/iobroker-<anyname>:/opt/iobroker
+    working_dir: /opt/iobroker/
+    networks:
+      - iobroker-<anyname>_network
+    ports:
+      - "8081:8081"
+    restart: "always"

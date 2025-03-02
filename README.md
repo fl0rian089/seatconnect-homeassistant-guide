@@ -1,0 +1,1 @@
+# seatconnect-homeassistant-guide2

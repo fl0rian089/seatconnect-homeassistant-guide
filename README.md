@@ -15,23 +15,23 @@ in ioBroker:
 1. after you started iobroker, go to settings -> repositories and change the active repository to "beta", Click Save and Close.
 2. click on adapter -> search for vw-connect click on it and install it.
 3. click on adapter -> search for mqtt-client (the one with version 3.0.0) click on it and install it.
-4. click on instances -> mqtt-client.0 -> settings (wrench).
-   4.1. Host IP: ip-of-homeassistant instance
-   4.2. Client-ID: would recommend to name it how you like.
-   4.3. username / password (you can create a new user on homeassistant for better security, but you can just login with your admin account)
-   4.4. if you want to use a prefix for subscribe and publish topics, choose one, I deleted everything.
+4. click on instances -> mqtt-client.0 -> settings (wrench).  
+   4.1. Host IP: ip-of-homeassistant instance  
+   4.2. Client-ID: would recommend to name it how you like.  
+   4.3. username / password (you can create a new user on homeassistant for better security, but you can just login with your admin account)  
+   4.4. if you want to use a prefix for subscribe and publish topics, choose one, I deleted everything.  
 5. Click Save and Close.
-6. click on instances -> vw-connect.0 -> settings (wrench).
-  6.1. connect app mail: <your-seat/cupra-account mail>
-  6.2. connect app password: <your-seat/cupra-account password>
-  6.3. Type: My SEAT (for SEAT & CUPRA cars)
-  6.4. Update interval in minutes: choose what you like, i put 10 in.
-  6.5. modify rest of settings as you want
-  6.6. Click Save and Close.
-7. check the logs for errors.
-8. click on objects tab -> double-click vw-connect -> 0 -> <your-vin> -> position
-  8.1. latitudeConv -> click the gear/settings symbol on the right -> Activate -> publish -> Activate & retain. -> Click Save and Close.
-  8.2. longitudeConv -> click the gear/settings symbol on the right -> Activate -> publish -> Activate & retain. -> Click Save and Close.
+6. click on instances -> vw-connect.0 -> settings (wrench).  
+  6.1. connect app mail: <your-seat/cupra-account mail>  
+  6.2. connect app password: <your-seat/cupra-account password>  
+  6.3. Type: My SEAT (for SEAT & CUPRA cars)  
+  6.4. Update interval in minutes: choose what you like, i put 10 in.  
+  6.5. modify rest of settings as you want  
+  6.6. Click Save and Close.  
+7. check the logs for errors.  
+8. click on objects tab -> double-click vw-connect -> 0 -> "VIN" -> position  
+      8.1. latitudeConv -> click the gear/settings symbol on the right -> Activate -> publish -> Activate & retain. -> Click Save and Close.  
+      8.2. longitudeConv -> click the gear/settings symbol on the right -> Activate -> publish -> Activate & retain. -> Click Save and Close.
 
 <h2>Change to Homeassistant</h2>
 
@@ -45,10 +45,10 @@ mqtt:
       state_topic: "vw-connect/0/<vin>/position/longitudeConv"
     - name: "<VIN>_latitude_location"
       state_topic: "vw-connect/0/<vin>/position/latitudeConv"
-```
-4. to convert from lat/lon to address, you need a rest sensor in your template/sensor area:
+```  
 
-   4.1 Google Geocoding API:
+4. to convert from lat/lon to address, you need a rest sensor in your template/sensor area:  
+4.1 Google Geocoding API:  
 ```     
   - platform: rest
     unique_id: "<VIN>_CarLocationAddress"
@@ -76,9 +76,7 @@ mqtt:
       {%- endif %}
     scan_interval: 9999999999                  #### it's 9999999999 to prevent spamming the api. we'll add a trigger to our automations.yaml so the google api gets only contacted, if the position of the car changes.
 ```
-
-  
-   4.2 openstreetmap:
+4.2 openstreetmap:  
 ```     
 - platform: rest
   unique_id: "<VIN>_CarLocationAddress"

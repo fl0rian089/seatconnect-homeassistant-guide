@@ -1,6 +1,6 @@
 <h1 style="color:red;">seatconnect-homeassistant-guide</h1>
 
-This guide will help you set up a workaround working for the discontinued seatconnect-homeassistant hacs plugin. in this example we'll get the position from the app into a homeassistant sensor.
+This guide will help you set up a workaround for the discontinued seatconnect-homeassistant hacs plugin. in this example we'll get the position from the app into a homeassistant sensor.
 
 <h2>What are the prerequisites?</h2>
 
